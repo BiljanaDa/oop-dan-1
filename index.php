@@ -4,13 +4,14 @@ class Users {
     private $username;
     private $email;
     private $password;
-    
+    public static $count = 0;
 
    function __construct($username, $email, $password)
    {
     $this->username = $username;
     $this->email = $email;
     $this->password = $password;
+    self::$count++;
    }
 
    public function getPassword():string {
@@ -45,3 +46,5 @@ $zika = new Users("Zika", "zika@mail", "5678");
 print_r($pera);
 print_r($mika);
 print_r($zika);
+
+echo users::$count;
